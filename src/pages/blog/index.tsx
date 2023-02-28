@@ -3,15 +3,14 @@ import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { client } from 'src/libs/client';
 
-type TBlog = {
+export type Blog = {
   title: string;
   body: string;
 };
 
-type TProps = MicroCMSListResponse<TBlog>;
+type TProps = MicroCMSListResponse<Blog>;
 
 const Home: NextPage<TProps> = (props) => {
-  console.log(props);
 
   return (
     <div className="text-blue-500">
@@ -27,11 +26,10 @@ const Home: NextPage<TProps> = (props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<TProps> = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const data = await client.get({
     endpoint: 'blogs',
   });
-  console.log(data);
   return {
     props: data,
   };
