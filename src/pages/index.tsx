@@ -17,7 +17,7 @@ const Home: NextPage<TProps> = (props) => {
       <ul>
         {props.contents.map((content) => (
           <li key={content.id}>
-            <Link href={content.id}>{content.title}</Link>
+            <Link href={`blog/${content.id}`}>{content.title}</Link>
           </li>
         ))}
       </ul>
