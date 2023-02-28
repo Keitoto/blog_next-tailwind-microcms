@@ -13,11 +13,11 @@ type TProps = MicroCMSListResponse<Blog>;
 const Home: NextPage<TProps> = (props) => {
   return (
     <div className="text-blue-500">
-      <p>Total Articles: {props.totalCount}</p>
-      <ul>
+      <p className='text-gray-400'>Total Articles: {props.totalCount}</p>
+      <ul className='mt-4 space-y-4'>
         {props.contents.map((content) => (
           <li key={content.id}>
-            <Link href={`blog/${content.id}`}>{content.title}</Link>
+            <Link href={`blog/${content.id}`}><a className='underline text-xl text-blue-500 hover:text-blue-400'>{content.title}</a></Link>
           </li>
         ))}
       </ul>
