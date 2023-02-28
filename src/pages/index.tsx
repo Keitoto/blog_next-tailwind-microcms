@@ -10,7 +10,7 @@ export type Blog = {
 
 type TProps = MicroCMSListResponse<Blog>;
 
-const Home: NextPage<TProps> = (props) => {
+const BlogList: NextPage<TProps> = (props) => {
   return (
     <div className="text-blue-500">
       <p className='text-gray-400'>Total Articles: {props.totalCount}</p>
@@ -34,4 +34,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Home;
+export default BlogList;
